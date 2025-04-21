@@ -6,9 +6,13 @@ const text = btn.innerHTML;
 
 form.onsubmit = e =>{
     e.preventDefault()
-    const formData = new FormData(form)
+    btn.innerHTML = 'Loading...'
+    const data = new FormData(form)
+    const username = data.get("username");
+    const password = data.get("password");
+    const body = { username, password };
     axios
-    .post("https://to-do-list-api-using-fastapi.onrender.com/login", formData)
+    .post("https://to-do-list-sn07.onrender.com/login", data)
     .then((res) =>{
         localStorage.setItem('token',res.data.access_token);
         localStorage.setItem('user',JSON.stringify(body));

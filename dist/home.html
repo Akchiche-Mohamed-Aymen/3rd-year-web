@@ -73,7 +73,7 @@
                 <div class="p-6 border-b">
                     <form id="add-todo-form" class="flex gap-3">
                         <input type="text" id="new-todo" class="flex-1 border border-gray-300 rounded py-2 px-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="What needs to be done?"/>
-                        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Add Task</button>
+                        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-button hover:bg-opacity-90 transition whitespace-nowrap add">Add Task</button>
                     </form>
                 </div>
                 
@@ -91,45 +91,15 @@
                         </button>
                     </div>
                     <div class="text-sm text-gray-600">
-                        <span id="tasks-counter">3</span> items left
+                        <span id="tasks-counter">0</span> items left
                     </div>
                 </div>
                 
                 <!-- Todo List Section -->
                 <div class="divide-y divide-gray-200" id="todo-list">
                     <!-- Todo items will be dynamically generated here -->
-                    
-                    <div class="todo-item p-4 flex items-center" data-id="2">
-                        <label class="custom-checkbox flex items-center">
-                            <input type="checkbox" class="todo-checkbox">
-                            <div class="checkmark"></div>
-                        </label>
-                        <span class="todo-text ml-3 flex-1">Schedule team meeting for next sprint planning</span>
-                        <div class="flex space-x-2">
-                            <button class="edit-todo-btn w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary">
-                                <i class="ri-pencil-line"></i>
-                            </button>
-                            <button class="delete-todo-btn w-8 h-8 flex items-center justify-center text-gray-500 hover:text-red-500">
-                                <i class="ri-delete-bin-line"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="todo-item completed p-4 flex items-center" data-id="3">
-                        <label class="custom-checkbox flex items-center">
-                            <input type="checkbox" class="todo-checkbox" checked>
-                            <div class="checkmark"></div>
-                        </label>
-                        <span class="todo-text ml-3 flex-1">Send follow-up email to marketing department</span>
-                        <div class="flex space-x-2">
-                            <button class="edit-todo-btn w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary">
-                                <i class="ri-pencil-line"></i>
-                            </button>
-                            <button class="delete-todo-btn w-8 h-8 flex items-center justify-center text-gray-500 hover:text-red-500">
-                                <i class="ri-delete-bin-line"></i>
-                            </button>
-                        </div>
-                    </div>
+                  
+                   
                 </div>
                 
                 <!-- Empty State -->
