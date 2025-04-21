@@ -2,6 +2,7 @@
 const form = document.forms[0]
 const btn  = document.querySelector('button')
 const alerts = document.querySelectorAll(".alert");
+console.log(alerts[0])
 
 
 form.onsubmit = e =>{

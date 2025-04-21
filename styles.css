@@ -115,5 +115,5 @@ input:checked + .switch-slider:before {
 }
 
 .show{
-  right: 5px;
+  right: 10px;
 }

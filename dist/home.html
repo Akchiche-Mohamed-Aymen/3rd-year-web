@@ -4,18 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="home.js" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#8b5cf6" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
       <!-- Home Page (Todo List) -->
-      <div id="home-page" class="min-h-screen flex flex-col hidden">
+      <div id="home-page" class="min-h-screen flex flex-col ">
         <!-- Header -->
         <header class="bg-white shadow">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <h1 class="font-['Pacifico'] text-2xl text-primary">logo</h1>
+                <h1 class="font-['Pacifico'] text-2xl text-primary">My Tasks</h1>
                 <div class="flex items-center space-x-4">
                     <div class="text-right">
                         <p class="text-sm text-gray-600">Welcome back,</p>
-                        <p class="font-medium" id="user-name">Emily Johnson</p>
+                        <p class="font-medium" id="user-name"></p>
                     </div>
                     <div class="relative group">
                         <button class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -36,7 +72,7 @@
                 <!-- Add Todo Section -->
                 <div class="p-6 border-b">
                     <form id="add-todo-form" class="flex gap-3">
-                        <input type="text" id="new-todo" class="flex-1 border border-gray-300 rounded py-2 px-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="What needs to be done?">
+                        <input type="text" id="new-todo" class="flex-1 border border-gray-300 rounded py-2 px-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="What needs to be done?"/>
                         <button type="submit" class="bg-primary text-white py-2 px-6 rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Add Task</button>
                     </form>
                 </div>
