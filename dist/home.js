@@ -1,7 +1,24 @@
 const todolist = document.getElementById('todo-list')
 const user =JSON.parse(localStorage.getItem('user'))
 const addBtn = document.querySelector('.add')
+const newTodoInput = document.querySelector('input')
+addBtn.onclick = ()=>alert(5)
+newTodoInput.onchange = ()=>{
+    const text = newTodoInput.value
+    console.log(text)
+    if(text.length > 0){
+        addBtn.disabled = false
+        addBtn.style.background = ''
+  }
+  else{
+    addBtn.disabled = true
+        addBtn.style.background = 'gray'
+  }
+
+}
 addBtn.disabled = true
+addBtn.style.background = 'gray'
+addBtn.onclick = ()=>alert(5)
 document.getElementById('user-name').innerHTML = user.username
 const titles = ['abc' , 'cdv']
 function buildUI(){
