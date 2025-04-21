@@ -2,15 +2,18 @@
 const form = document.forms[0]
 const btn  = document.querySelector('button')
 const alerts = document.querySelectorAll(".alert");
-console.log(alerts[0])
-
+const text = btn.innerHTML;
 
 form.onsubmit = e =>{
     e.preventDefault()
     const formData = new FormData(form)
     axios
     .post("https://to-do-list-api-using-fastapi.onrender.com/login", formData)
-    .then((_) => appear(0))
+    .then((res) =>{
+        localStorage.setItem('token',res.data.access_token);
+        localStorage.setItem('user',JSON.stringify(body));
+        appear(0)
+    } )
     .catch((err) =>{
         console.log(err)
         appear(1)
@@ -19,6 +22,10 @@ form.onsubmit = e =>{
 
 const appear = (i) => {
     alerts[i].classList.add("show");
-    setTimeout(() => alerts[i].classList.remove("show"), 3000);
+    btn.innerHTML = text;
+    setTimeout(() =>{
+        alerts[i].classList.remove("show")
+        if(i === 0) location = 'home.html'
+        }, 3000);
   };
   

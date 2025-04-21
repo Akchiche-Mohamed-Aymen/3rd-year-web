@@ -2,7 +2,6 @@ const username = document.getElementById("register-username");
 const password = document.getElementById("register-password");
 const form = document.forms[0];
 const alerts = document.querySelectorAll(".alert");
-console.log(alerts[0])
 const btn = document.querySelector("button");
 const text = btn.innerHTML;
 form.onsubmit = async (e) => {
@@ -30,7 +29,6 @@ form.onsubmit = async (e) => {
 };
 const appear = (i) => {
   alerts[i].classList.add("show");
-  console.log(alerts[i])
   btn.innerHTML = text;
   setTimeout(() =>{
      alerts[i].classList.remove("show")
