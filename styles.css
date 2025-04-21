@@ -1,3 +1,4 @@
+@tailwind utilities;
 
 :where([class^="ri-"])::before {
   content: "\f3c2";
@@ -5,6 +6,25 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: #f9fafb;
+}
+.alert{
+  position: fixed;
+  top: 5px;
+  right: -170px;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  transition: 2s;
+}
+.alert i {
+  color:  white;
+  margin-right: 3px;
+}
+.alert:first-child{
+  background-color: green;
+}
+.alert:last-child{
+  background-color: red;
 }
 .todo-item.completed .todo-text {
   text-decoration: line-through;
@@ -92,4 +112,8 @@ input:checked + .switch-slider {
 }
 input:checked + .switch-slider:before {
   transform: translateX(20px);
+}
+
+.show{
+  right: 5px;
 }
