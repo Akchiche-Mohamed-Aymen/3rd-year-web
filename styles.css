@@ -96,6 +96,10 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: 0.4s;
   border-radius: 34px;
 }
+img{
+  height: 170px;
+  width: 170px;
+}
 .switch-slider:before {
   position: absolute;
   content: "";
