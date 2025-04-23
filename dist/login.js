@@ -7,20 +7,21 @@ const text = btn.innerHTML;
 form.onsubmit = e =>{
     e.preventDefault()
     btn.innerHTML = 'Loading...'
-    const data = new FormData(form)
-    const username = data.get("username");
-    const password = data.get("password");
-    const body = { username, password };
+    const data = new FormData(form);
+  const username = data.get("username");
+  const password = data.get("password");
+  const body = { username, password };
     axios
-    .post("https://to-do-list-sn07.onrender.com/login", data)
+    .post("http://localhost:3000/login", body)
     .then((res) =>{
-        localStorage.setItem('token',res.data.access_token);
-        localStorage.setItem('user',JSON.stringify(body));
-        appear(0)
+        localStorage.setItem('user',JSON.stringify((res.data.user)))
+        alertify.success('Success Login');
+        btn.innerHTML = text
+        setTimeout(()=> location = 'home.html' , 2000)
     } )
     .catch((err) =>{
-        console.log(err)
-        appear(1)
+        btn.innerHTML = text
+        alertify.error('Failed Login');
     } );
 };
 

@@ -4,6 +4,7 @@ const form = document.forms[0];
 const alerts = document.querySelectorAll(".alert");
 const btn = document.querySelector("button");
 const text = btn.innerHTML;
+
 form.onsubmit = async (e) => {
   e.preventDefault();
   btn.innerHTML = "Loding...";
@@ -14,24 +15,15 @@ form.onsubmit = async (e) => {
   const body = { username, password };
   try {
     let res = await axios.post(
-      "https://to-do-list-sn07.onrender.com/register",
+      "http://localhost:3000/register",
       body
     );
-    res = await axios.post("https://to-do-list-sn07.onrender.com/login", data);
-    console.log(res)
-    localStorage.setItem('token',res.data.access_token);
-    localStorage.setItem('user',JSON.stringify(body));
-    appear(0)
+    alertify.success('Success Registretion');
+    localStorage.setItem('user',JSON.stringify((res.data.user)))
+    btn.innerHTML = text
+    setTimeout(()=> location = 'home.html' , 2000)
   } catch (error) {
-    console.log(error);
-    appear(1)
+     btn.innerHTML = text
+    alertify.error('Failed Registretion');
   }
-};
-const appear = (i) => {
-  alerts[i].classList.add("show");
-  btn.innerHTML = text;
-  setTimeout(() =>{
-     alerts[i].classList.remove("show")
-     if(i === 0) location = 'home.html'
-     }, 3000);
 };
