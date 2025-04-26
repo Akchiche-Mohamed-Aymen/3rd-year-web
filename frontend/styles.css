@@ -121,3 +121,11 @@ input:checked + .switch-slider:before {
 .show{
   right: 10px;
 }
+.fa-spinner {
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}

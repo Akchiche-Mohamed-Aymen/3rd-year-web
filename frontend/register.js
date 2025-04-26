@@ -15,7 +15,7 @@ form.onsubmit = async (e) => {
   const body = { username, password };
   try {
     let res = await axios.post(
-      "http://localhost:3000/register",
+      "https://todos-backend-1-w8je.onrender.com/register",
       body
     );
     alertify.success('Success Registretion');

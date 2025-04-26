@@ -8,7 +8,7 @@ const roles = document.querySelector("[role]").children;
 let todos = [];
 function getTodos() {
   axios
-    .get(`http://localhost:3000/todos/${userId}`)
+    .get(`https://todos-backend-1-w8je.onrender.com/todos/${userId}`)
     .then((res) => {
       todos = res.data.todos;
       buildUI(todos);
@@ -100,7 +100,7 @@ newTodoInput.addEventListener("input", () => {
 addBtn.onclick = () => {
   const newTodoText = newTodoInput.value;
   axios
-    .post("http://localhost:3000/todos", {
+    .post("https://todos-backend-1-w8je.onrender.com/todos", {
       userId,
       title: newTodoText,
     })
@@ -119,7 +119,7 @@ function update(id) {
     todo.title,
     function (evt, value) {
       axios
-        .put(`http://localhost:3000/todos/${id}`, { title: value })
+        .put(`https://todos-backend-1-w8je.onrender.com/todos/${id}`, { title: value })
         .then(() => {
           alertify.success("Success update");
           getTodos();
@@ -138,7 +138,7 @@ function deleteTodo(id, userId) {
     `Are You Sure To delete "${todo.title}"? `,
     function () {
       axios
-        .delete(`http://localhost:3000/todos/${id}`, {
+        .delete(`https://todos-backend-1-w8je.onrender.com/todos/${id}`, {
           data: { userId },
         })
         .then(() => {
@@ -156,7 +156,7 @@ function complete(id) {
   const todo = todos.find((t) => t.id == id);
 
   axios
-    .put(`http://localhost:3000/todos/${id}`, { completed: !todo.completed })
+    .put(`https://todos-backend-1-w8je.onrender.com/todos/${id}`, { completed: !todo.completed })
     .then(() => {
       alertify.success("Success update");
       getTodos();
