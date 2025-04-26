@@ -21,7 +21,7 @@ form.onsubmit = async (e) => {
     alertify.success('Success Registretion');
     localStorage.setItem('user',JSON.stringify((res.data.user)))
     btn.innerHTML = text
-    setTimeout(()=> location = 'home.html' , 2000)
+    setTimeout(()=> location = 'index.html' , 2000)
   } catch (error) {
      btn.innerHTML = text
     alertify.error('Failed Registretion');

@@ -17,7 +17,7 @@ form.onsubmit = e =>{
         localStorage.setItem('user',JSON.stringify((res.data.user)))
         alertify.success('Success Login');
         btn.innerHTML = text
-        setTimeout(()=> location = 'home.html' , 2000)
+        setTimeout(()=> location = 'index.html' , 2000)
     } )
     .catch((err) =>{
         btn.innerHTML = text

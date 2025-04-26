@@ -1,5 +1,7 @@
 const todolist = document.getElementById("todo-list");
 const user = JSON.parse(localStorage.getItem("user"));
+if(!user)
+   location = 'login.html'
 const addBtn = document.querySelector(".add");
 const newTodoInput = document.querySelector("input");
 const completedCount = document.getElementById("tasks-counter");
