@@ -165,3 +165,11 @@ function complete(id) {
     })
     .catch(() => alertify.error("Failed Update"));
 }
+
+
+function resize() {
+  const screenWidth = innerWidth
+  addBtn.innerHTML = screenWidth >= 650 ? 'Add Task' : '+'
+}
+resize()
+onresize = resize

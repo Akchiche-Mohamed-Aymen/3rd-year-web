@@ -1,0 +1,33 @@
+@tailwind utilities;
+
+:where([class^="ri-"])::before {
+  content: "\f3c2";
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+}
+
+
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.toggle-password {
+  cursor: pointer;
+}
+img{
+  height: 170px;
+  width: 170px;
+}
+
+.fa-spinner {
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
